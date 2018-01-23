@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  height: 9rem;
+  background: linear-gradient(180deg, #6AC3BC 0%, #D8D8D8 100%);
+  color: $main-color;
+  font-size: 1.6rem;
+  font-weight: 500;
+  justify-content: center;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.2);
+
+  &:hoveer {
+    box-shadow: 0 0.2rem 0.8rem 0 rgba(0,0,0,0.6);
+  }
+}
+
+.header__text__first,
+.header__text__second {
+  width: 9rem;
+  padding: 2.2rem 0;
+}
+
+.header__text__first {
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.header__text__second {
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: $phone-screen){
+  .header__text__first,
+  .header__text__second {
+    font-size: 1.4rem;
+  }
+}

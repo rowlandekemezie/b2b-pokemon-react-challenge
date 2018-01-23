@@ -7,7 +7,8 @@ body {
   padding: 0;
   font-family: Rubik, sans-serif;
   box-sizing: border-box;
-  font-size: 1rem; }
+  font-size: 1rem;
+  font-weight: 300; }
 
 .main {
   min-height: calc(100vh - 6rem);
@@ -23,12 +24,46 @@ body {
 
 .footer {
   display: flex;
-  height: 15rem;
-  background-color: #0c5a63;
+  height: 6rem;
+  background-color: #5B716B;
   justify-content: center;
   align-items: center;
-  color: #ffffff; }
+  color: #ffffff;
+  font-style: italic;
+  font-size: 1.4rem; }
 
 .footer__twitter__link {
   text-decoration: none;
   color: inherit; }
+
+@media only screen and (min-width: 768px) {
+  height: 10rem; }
+
+.header {
+  display: flex;
+  height: 9rem;
+  background: linear-gradient(180deg, #6AC3BC 0%, #D8D8D8 100%);
+  color: #C36A71;
+  font-size: 1.6rem;
+  font-weight: 500;
+  justify-content: center;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2); }
+  .header:hoveer {
+    box-shadow: 0 0.2rem 0.8rem 0 rgba(0, 0, 0, 0.6); }
+
+.header__text__first,
+.header__text__second {
+  width: 9rem;
+  padding: 2.2rem 0; }
+
+.header__text__first {
+  margin-right: 1rem;
+  text-align: right; }
+
+.header__text__second {
+  margin-left: 1rem; }
+
+@media only screen and (max-width: 320px) {
+  .header__text__first,
+  .header__text__second {
+    font-size: 1.4rem; } }
