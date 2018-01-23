@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import withRouter from 'react-router-dom/withRouter';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import Main from '../../containers/Main';
+
 import '../../static/styles/main.css';
 
 class App extends Component {
@@ -8,13 +11,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <main className="main">
-         The body
-        </main>
+        <Main />
         <Footer />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
