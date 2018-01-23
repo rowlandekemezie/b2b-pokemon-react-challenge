@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import PokemonItem from './PokemonItem';
 
-const PokemonList = ({ pokemons }) => {
+const PokemonList = ({ pokemons, onSelect }) => {
   const renderPokemons = () => {
     return pokemons.map(pokemon => (
       <PokemonItem key={pokemon.name} 
         pokemon={pokemon}
+        onSelect={onSelect}
       />
     ));
   };

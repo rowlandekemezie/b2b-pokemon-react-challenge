@@ -67,3 +67,41 @@ body {
   .header__text__first,
   .header__text__second {
     font-size: 1.4rem; } }
+
+.main__pagination {
+  display: inline-flex;
+  justify-content: center;
+  font-weight: 500;
+  margin: 4rem auto;
+  align-items: center; }
+
+.pagination__prev,
+.pagination__next {
+  background: #C36A71;
+  color: #ffffff;
+  padding: 2rem 5.7rem;
+  border-radius: 10rem;
+  cursor: pointer; }
+
+.pagination__current {
+  border: 0.1rem solid #C36A71;
+  color: #4A4A4A;
+  border-radius: 10rem;
+  padding: 2rem 3rem;
+  margin-left: 2rem; }
+
+.pagination__text {
+  color: #4A4A4A;
+  margin: 2rem; }
+
+.ReactModalPortal > div {
+  opacity: 0; }
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: opacity 800ms ease-in-out;
+  background: rgba(115, 104, 104, 0.75); }
+  .ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+    background: rgba(191, 172, 172, 0.5); }
+  .ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0; }

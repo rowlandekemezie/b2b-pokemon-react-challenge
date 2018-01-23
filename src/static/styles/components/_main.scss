@@ -1,0 +1,32 @@
+.main {
+}
+
+.main__pagination {
+  display: inline-flex;
+  justify-content: center;
+  font-weight: 500;
+  margin: 4rem auto;
+  align-items: center;
+
+}
+.pagination__prev,
+.pagination__next {
+  background: $main-color;
+  color: $white;
+  padding: 2rem 5.7rem;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.pagination__current {
+  border: .1rem solid $main-color;
+  color: $text-color;
+  border-radius: 10rem;
+  padding: 2rem 3rem;
+  margin-left: 2rem;
+}
+
+.pagination__text {
+  color: $text-color;
+  margin: 2rem;
+}
