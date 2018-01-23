@@ -22,6 +22,10 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:coverage": "npm test -- --coverage",
+    "test:coveralls": "cat ./coverage/lcov.info | coveralls",
+    "lint": "./node_modules/.bin/eslint src",
+    "lint-fix": "./node_modules/.bin/eslint src --fix",
     "eject": "react-scripts eject"
   },
   "jest": {
