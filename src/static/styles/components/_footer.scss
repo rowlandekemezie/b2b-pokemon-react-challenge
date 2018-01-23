@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  height: 15rem;
+  background-color: $main-color;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.footer__twitter__link {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,26 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Rubik, sans-serif;
+  box-sizing: border-box;
+  font-size: $s-size;
+}
+
+.main {
+  min-height: calc(100vh - 6rem);
+  width: 90%;
+  margin: 5rem auto;
+  text-align: center;  
+
+  @media screen and (min-width: $iphone-screen){
+    width: 70%;
+  }
+
+  @media screen and (min-width: $laptop-screen) {
+    width: 60%;
+  }
+}
