@@ -3,6 +3,6 @@ export const pokemonImageUrl = id => `https:raw.githubusercontent.com/PokeAPI/sp
 export const getPokemanId = url => {
   const splittedUrl = url.split('/');
   const id = parseInt(splittedUrl[splittedUrl.length - 2], 10);
-  
+
   return id;
 };

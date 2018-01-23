@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchInput = ({ value, onChange }) => {
-  return(
+  return (
     <input
       type="text"
       placeholder="Search for Pokémon here"
@@ -10,6 +10,5 @@ const SearchInput = ({ value, onChange }) => {
     />
   );
 };
-
 
 export default SearchInput;

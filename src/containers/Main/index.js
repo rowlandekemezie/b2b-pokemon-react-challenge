@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Nprogress from 'nprogress';
-import CSSTransition from 'react-transition-group/Transition'
 import ReactPlaceholder from 'react-placeholder';
 import DetailModal from 'react-modal';
-import {withRouter, Route } from 'react-router-dom/withRouter'
 import 'nprogress/nprogress.css';
 import 'react-placeholder/lib/reactPlaceholder.css';
 import { apiRequest } from '../../api';
@@ -21,8 +19,8 @@ export class Main extends Component {
     isDetailModalOpen: false
   }
 
-  handleSearch = ({ target: {value}}) => {
-    this.setState({search: value})
+  handleSearch = ({target: {value}}) => {
+    this.setState({search: value});
   }
 
   filterPokemon(pokemons) {
@@ -32,14 +30,13 @@ export class Main extends Component {
   handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
 
   async componentWillMount() {
-
     if (this.state.pokemons.length === 0) {
       Nprogress.start();
       try {
         const { results } = await apiRequest('/?limit=50');
         this.setState({pokemons: results});
       } catch (e) {
-        this.setState({error: 'Something went wrong'})
+        this.setState({error: 'Something went wrong'});
       }
       Nprogress.done();
     }
@@ -47,13 +44,13 @@ export class Main extends Component {
 
   render() {
     const { pokemons, search, isDetailModalOpen } = this.state;
-    const displayPokemons = pokemons.slice(0, PAGE_SIZE)
+    const displayPokemons = pokemons.slice(0, PAGE_SIZE);
     return (
       <main className="main">
         <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
-          <SearchInput onChange={this.handleSearch} value={search}/>
-          {displayPokemons && displayPokemons.length? 
-            <PokemonList pokemons={displayPokemons} onSelect={this.handleSelect} />
+          <SearchInput onChange={this.handleSearch} value={search} />
+          {displayPokemons && displayPokemons.length
+            ? <PokemonList pokemons={displayPokemons} onSelect={this.handleSelect} />
             : <div>No Pokemon found</div>
           }
         </ReactPlaceholder>
@@ -61,8 +58,7 @@ export class Main extends Component {
           isOpen={isDetailModalOpen}
           onRequestClose={this.handleSelect}
         >
-        <Route path="/pokemon/:name/:id" component={PokemanDetail} />
-          <PokemanDetail backToHome={this.handleSelect}/>
+          <PokemanDetail backToHome={this.handleSelect} />
         </DetailModal>
         <div className="main__pagination">
           <div className="pagination__prev">prev</div>
@@ -71,7 +67,7 @@ export class Main extends Component {
           <div className="pagination__next">next</div>
         </div>
       </main>
-    )
+    );
   }
 }
 

@@ -1,4 +1,4 @@
-import 'whatwg-fetch';
+import fetch from 'whatwg-fetch';
 
 async function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -20,7 +20,7 @@ export const apiRequest = (url, method = 'GET') => {
   const request = {
     method,
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
   };
 
@@ -28,4 +28,3 @@ export const apiRequest = (url, method = 'GET') => {
     .then(checkStatus)
     .then(parseJSON);
 };
-
