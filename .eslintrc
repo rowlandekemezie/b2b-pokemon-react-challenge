@@ -1,0 +1,20 @@
+{
+			"extends": [
+							"standard",
+							"standard-jsx"
+			],
+			"parser": "babel-eslint",
+			"env": {
+							"jest": true
+			},
+			"globals": {
+							"shallow": true,
+							"mount": true,
+							"render": true
+			},
+			"rules": {
+				"semi": [2, "always"],
+				"jsx-quotes": [2, "prefer-double"],
+				"space-before-function-paren": ["error", "never"],
+			}
+}
