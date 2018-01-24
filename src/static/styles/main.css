@@ -14,6 +14,10 @@ body {
   min-height: calc(100vh - 6rem);
   margin: 5rem auto;
   text-align: center; }
+  .main .main__not-found {
+    color: #C36A71;
+    font-size: 1.8rem;
+    margin-top: 3rem; }
 
 .footer {
   display: flex;
@@ -67,6 +71,44 @@ body {
   .header__text__first,
   .header__text__second {
     padding-top: .8rem; } }
+
+.pagination {
+  display: inline-flex;
+  justify-content: center;
+  margin: 4rem auto;
+  align-items: center;
+  font-size: 1.4rem; }
+
+.pagination__prev,
+.pagination__next {
+  background: #C36A71;
+  color: #ffffff;
+  width: 4.5rem;
+  padding: 2rem;
+  border-radius: 10rem;
+  cursor: pointer; }
+
+.pagination__current {
+  border: 0.1rem solid #C36A71;
+  color: #4A4A4A;
+  border-radius: 10rem;
+  padding: 2rem 2.5rem;
+  margin-left: 1rem; }
+
+.pagination__text {
+  color: #4A4A4A;
+  margin: 1rem; }
+
+@media only screen and (min-width: 768px) {
+  .pagination {
+    font-size: 1.8rem; }
+  .pagination__prev,
+  .pagination__next {
+    width: 9.4rem; }
+  .pagination__current {
+    margin-left: 2rem; }
+  .pagination__text {
+    margin: 2rem; } }
 
 .pokemon__list {
   display: flex;
@@ -128,37 +170,11 @@ body {
   background-repeat: no-repeat;
   background-position: center; }
 
-.main__pagination {
-  display: inline-flex;
-  justify-content: center;
-  font-weight: 500;
-  margin: 4rem auto;
-  align-items: center; }
-
 @keyframes fadein {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
-
-.pagination__prev,
-.pagination__next {
-  background: #C36A71;
-  color: #ffffff;
-  padding: 2rem 5.7rem;
-  border-radius: 10rem;
-  cursor: pointer; }
-
-.pagination__current {
-  border: 0.1rem solid #C36A71;
-  color: #4A4A4A;
-  border-radius: 10rem;
-  padding: 2rem 3rem;
-  margin-left: 2rem; }
-
-.pagination__text {
-  color: #4A4A4A;
-  margin: 2rem; }
 
 .ReactModalPortal > div {
   opacity: 0; }
