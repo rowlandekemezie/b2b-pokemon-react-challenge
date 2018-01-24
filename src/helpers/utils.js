@@ -9,6 +9,6 @@ export const getPokemanId = url => {
 
 export const formatName = name => {
   const replaceSlash = name.replace('-', ' ');
-   
+
   return replaceSlash.charAt(0).toUpperCase() + replaceSlash.substr(1);
 };
