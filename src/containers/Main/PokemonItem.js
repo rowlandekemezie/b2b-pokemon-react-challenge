@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getPokemanId, pokemonImageUrl, formatName } from '../../helpers/utils';
+import { getPokemonId, pokemonImageUrl, formatName } from '../../helpers/utils';
 
 const PokemonItem = ({ pokemon }) => {
-  const id = getPokemanId(pokemon.url);
+  const id = getPokemonId(pokemon.url);
   const backgroundStyle = {
     backgroundImage: `url(${pokemonImageUrl(id)})`
   };

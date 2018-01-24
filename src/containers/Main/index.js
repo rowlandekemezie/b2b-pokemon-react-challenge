@@ -19,20 +19,18 @@ export class Main extends Component {
     isDetailModalOpen: false
   }
 
-  // handleSearch = ({target: {value}}) => {
-  //   this.setState({search: value});
-  //   const reg = new RegExp(value, 'gi');
-  //   this.state.pokemons.filter(pokemon => pokemon.name.search(reg) >= 0);
-  // }
+  handleSearch = ({target: {value}}) => {
+    this.setState({search: value});
+  }
 
-  // getDisplayedData() {
-  //   const { search, pokemons } = this.state;
-  //   const searchQuery = new RegExp(search, 'gi');
+  getDisplayedData() {
+    const { search, pokemons } = this.state;
+    const searchQuery = new RegExp(search, 'gi');
 
-  //   return search.length
-  //     ? pokemons.filter(pokemon => pokemon.name.search(searchQuery) >= 0)
-  //     : pokemons;
-  // }
+    return search.length
+      ? pokemons.filter(pokemon => pokemon.name.search(searchQuery) >= 0)
+      : pokemons;
+  }
 
   handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
 
@@ -59,14 +57,14 @@ export class Main extends Component {
 
   render() {
     const { pokemons, search, isDetailModalOpen } = this.state;
-    const displayPokemons = pokemons.slice(0, PAGE_SIZE);
+    const displayPokemons = this.getDisplayedData().slice(0, PAGE_SIZE);
     return (
       <main className="main">
         <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
           <SearchInput onChange={this.handleSearch} value={search} />
           {displayPokemons && displayPokemons.length
             ? <PokemonList pokemons={displayPokemons} onSelect={this.handleSelect} />
-            : <div>No Pokemon found</div>
+            : <div className="main__not-found">No Pokemon found</div>
           }
         </ReactPlaceholder>
         <div className="main__pagination">
