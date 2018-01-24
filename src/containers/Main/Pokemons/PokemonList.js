@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PokemonItem from './PokemonItem';
 import Link from 'react-router-dom/Link';
-import { getPokemonId } from '../../helpers/utils';
+import { getPokemonId } from '../../../helpers/utils';
 
 const PokemonList = ({ pokemons, onSelect }) => {
   const renderPokemons = () => {
