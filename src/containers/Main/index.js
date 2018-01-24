@@ -9,6 +9,7 @@ import { PAGE_SIZE } from '../../constants';
 import PokemonList from './PokemonList';
 import PokemanDetail from './PokemonDetail';
 import SearchInput from './SearchInput';
+import withRouter from 'react-router-dom/withRouter';
 
 DetailModal.setAppElement('#root');
 export class Main extends Component {
@@ -29,7 +30,7 @@ export class Main extends Component {
 
   handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
 
-  async componentWillMount() {
+  async componentDidMount() {
     if (this.state.pokemons.length === 0) {
       Nprogress.start();
       try {
@@ -42,9 +43,16 @@ export class Main extends Component {
     }
   }
 
+  goBack = () => {
+    this.setState({isDetailModalOpen: false}, () => {
+      this.props.history.push('/');
+    });
+  }
+
   render() {
     const { pokemons, search, isDetailModalOpen } = this.state;
     const displayPokemons = pokemons.slice(0, PAGE_SIZE);
+    console.log(pokemons, 'what is');
     return (
       <main className="main">
         <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
@@ -54,21 +62,21 @@ export class Main extends Component {
             : <div>No Pokemon found</div>
           }
         </ReactPlaceholder>
-        <DetailModal
-          isOpen={isDetailModalOpen}
-          onRequestClose={this.handleSelect}
-        >
-          <PokemanDetail backToHome={this.handleSelect} />
-        </DetailModal>
         <div className="main__pagination">
           <div className="pagination__prev">prev</div>
           <div className="pagination__currEnt">1</div>
           <span className="pagination__text">of 5</span>
           <div className="pagination__next">next</div>
         </div>
+        <DetailModal
+          isOpen={isDetailModalOpen}
+          onRequestClose={this.goBack}
+        >
+          <PokemanDetail backToHome={this.goBack} />
+        </DetailModal>
       </main>
     );
   }
 }
 
-export default Main;
+export default withRouter(Main);

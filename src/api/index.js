@@ -1,4 +1,4 @@
-import fetch from 'whatwg-fetch';
+import fetch from 'isomorphic-fetch';
 
 async function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -17,6 +17,7 @@ function parseJSON(response) {
 
 export const apiRequest = (url, method = 'GET') => {
   const baseUrl = process.env.REACT_APP_POKEAPI_URL;
+  console.log(baseUrl, 'wha ti ');
   const request = {
     method,
     headers: {
