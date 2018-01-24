@@ -9,6 +9,7 @@ import { PAGE_SIZE } from '../../constants';
 import PokemonList from './PokemonList';
 import PokemanDetail from './PokemonDetail';
 import SearchInput from '../../components/SearchInput';
+import Pagination from '../../components/Pagination';
 import withRouter from 'react-router-dom/withRouter';
 
 export class Main extends Component {
@@ -16,23 +17,9 @@ export class Main extends Component {
     pokemons: [],
     error: '',
     search: '',
-    isDetailModalOpen: false
+    isDetailModalOpen: false,
+    currentPage: 1
   }
-
-  handleSearch = ({target: {value}}) => {
-    this.setState({search: value});
-  }
-
-  getDisplayedData() {
-    const { search, pokemons } = this.state;
-    const searchQuery = new RegExp(search, 'gi');
-
-    return search.length
-      ? pokemons.filter(pokemon => pokemon.name.search(searchQuery) >= 0)
-      : pokemons;
-  }
-
-  handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
 
   async componentWillMount() {
     DetailModal.setAppElement('body');
@@ -49,6 +36,21 @@ export class Main extends Component {
     }
   }
 
+  handleSearch = ({target: {value}}) => this.setState(({search}) => ({search: value}));
+
+  handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
+
+  onSelectPage = (currentPage) => this.setState({currentPage});
+
+  getDisplayedData() {
+    const { search, pokemons } = this.state;
+    const searchQuery = new RegExp(search, 'gi');
+
+    return search.length
+      ? pokemons.filter(pokemon => pokemon.name.search(searchQuery) >= 0)
+      : pokemons;
+  }
+
   goBack = () => {
     this.setState({isDetailModalOpen: false}, () => {
       this.props.history.push('/');
@@ -56,23 +58,26 @@ export class Main extends Component {
   }
 
   render() {
-    const { pokemons, search, isDetailModalOpen } = this.state;
-    const displayPokemons = this.getDisplayedData().slice(0, PAGE_SIZE);
+    const { pokemons, search, isDetailModalOpen, currentPage } = this.state;
+    const displayPokemons = this.getDisplayedData();
+    const totalPage = Math.ceil(displayPokemons.length / PAGE_SIZE) || 0;
+    const pokemonsToRender = displayPokemons.slice(Math.max(0, (currentPage - 1) * PAGE_SIZE), currentPage * PAGE_SIZE);
+
     return (
       <main className="main">
         <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
           <SearchInput onChange={this.handleSearch} value={search} />
-          {displayPokemons && displayPokemons.length
-            ? <PokemonList pokemons={displayPokemons} onSelect={this.handleSelect} />
-            : <div className="main__not-found">No Pokemon found</div>
+          {pokemonsToRender && pokemonsToRender.length
+            ? <PokemonList pokemons={pokemonsToRender} onSelect={this.handleSelect} />
+            : <div className="main__not-found">No Pokemon found :)</div>
           }
         </ReactPlaceholder>
-        <div className="main__pagination">
-          <div className="pagination__prev">prev</div>
-          <div className="pagination__currEnt">1</div>
-          <span className="pagination__text">of 5</span>
-          <div className="pagination__next">next</div>
-        </div>
+        <Pagination
+          current={currentPage}
+          total={totalPage}
+          onNext={() => this.onSelectPage(Math.min(currentPage + 1, totalPage))}
+          onPrev={() => this.onSelectPage(Math.max(1, currentPage - 1))}
+        />
         <DetailModal
           isOpen={isDetailModalOpen}
           onRequestClose={this.goBack}
