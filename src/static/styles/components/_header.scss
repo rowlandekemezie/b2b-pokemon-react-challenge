@@ -15,7 +15,7 @@
 
 .header__text__first,
 .header__text__second {
-  width: 9rem;
+  flex: 9rem;
   padding: 2.2rem 0;
 }
 
@@ -32,5 +32,16 @@
   .header__text__first,
   .header__text__second {
     font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: $phone-large-screen) {
+  .header {
+    font-size: 2.4rem;
+  }
+
+  .header__text__first,
+  .header__text__second {
+    padding-top: .8rem;
   }
 }

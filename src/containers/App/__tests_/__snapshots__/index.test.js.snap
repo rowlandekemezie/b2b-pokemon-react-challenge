@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<Route
-  render={[Function]}
-/>
+<div>
+  <Header />
+  <withRouter(Main) />
+  <Footer />
+</div>
 `;

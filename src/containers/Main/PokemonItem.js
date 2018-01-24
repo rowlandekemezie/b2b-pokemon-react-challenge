@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'react-router-dom/Link';
-import { getPokemanId, pokemonImageUrl } from '../../helpers/utils';
+import { getPokemanId, pokemonImageUrl, formatName } from '../../helpers/utils';
 
-const PokemonItem = ({ pokemon, onSelect }) => {
+const PokemonItem = ({ pokemon }) => {
   const id = getPokemanId(pokemon.url);
-
+  const backgroundStyle = {
+    backgroundImage: `url(${pokemonImageUrl(id)})`
+  };
   return (
-    <Link to={`/${pokemon.name}/${id}`} onClick={onSelect} className="main__pokemon__item">
-      <img src={pokemonImageUrl(id)} alt={pokemon.name} />
-    </Link>
+    <div className="pokemon__item">
+      <div className="pokemon__item__background__cover" style={backgroundStyle} />
+      <div className="pokemon__item__content">
+        <div className="pokeman__item__picture" style={backgroundStyle} />
+        <div className="pokemon__item__name">{formatName(pokemon.name)}</div>
+      </div>
+    </div>
   );
 };
 

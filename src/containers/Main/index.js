@@ -8,10 +8,9 @@ import { apiRequest } from '../../api';
 import { PAGE_SIZE } from '../../constants';
 import PokemonList from './PokemonList';
 import PokemanDetail from './PokemonDetail';
-import SearchInput from './SearchInput';
+import SearchInput from '../../components/SearchInput';
 import withRouter from 'react-router-dom/withRouter';
 
-DetailModal.setAppElement('#root');
 export class Main extends Component {
   state = {
     pokemons: [],
@@ -20,17 +19,26 @@ export class Main extends Component {
     isDetailModalOpen: false
   }
 
-  handleSearch = ({target: {value}}) => {
-    this.setState({search: value});
-  }
+  // handleSearch = ({target: {value}}) => {
+  //   this.setState({search: value});
+  //   const reg = new RegExp(value, 'gi');
+  //   this.state.pokemons.filter(pokemon => pokemon.name.search(reg) >= 0);
+  // }
 
-  filterPokemon(pokemons) {
-    // todo
-  }
+  // getDisplayedData() {
+  //   const { search, pokemons } = this.state;
+  //   const searchQuery = new RegExp(search, 'gi');
+
+  //   return search.length
+  //     ? pokemons.filter(pokemon => pokemon.name.search(searchQuery) >= 0)
+  //     : pokemons;
+  // }
 
   handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
 
-  async componentDidMount() {
+  async componentWillMount() {
+    DetailModal.setAppElement('body');
+
     if (this.state.pokemons.length === 0) {
       Nprogress.start();
       try {
@@ -52,7 +60,6 @@ export class Main extends Component {
   render() {
     const { pokemons, search, isDetailModalOpen } = this.state;
     const displayPokemons = pokemons.slice(0, PAGE_SIZE);
-    console.log(pokemons, 'what is');
     return (
       <main className="main">
         <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
@@ -71,6 +78,7 @@ export class Main extends Component {
         <DetailModal
           isOpen={isDetailModalOpen}
           onRequestClose={this.goBack}
+          closeTimeoutMS={400}
         >
           <PokemanDetail backToHome={this.goBack} />
         </DetailModal>
