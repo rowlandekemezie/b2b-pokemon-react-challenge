@@ -1,0 +1,24 @@
+.input__search {
+  display: block;
+  background-color: transparent;
+  color: rgba(0,0,0,.87);
+  border: none;
+  outline: 0;
+  height: 3.5rem;
+  width: 90%;
+  font-size: $sm-size;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  margin: .3rem auto;
+  background-image: url('../images/search-icon.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  border-bottom: 1px solid rgba(0,0,0,.4);
+
+  &:focus, &:hover {
+    border-color: $main-color;
+    background-image: url('../images/search-icon-hover.svg');
+    border-bottom-width: .2rem;
+  }
+}

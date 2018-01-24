@@ -1,12 +1,21 @@
 import React from 'react';
-import App from '../index'
+import App from '../index';
 
-it('renders without crashing', () => {
-  const component = shallow(<App />);
+let component;
+beforeAll(() => {
+  component = shallow(<App />);
+});
+
+test('renders without crashing', () => {
   expect(component).toMatchSnapshot();
 });
 
-it('It should contain Footer component', () => {
+test('should contain Footer component', () => {
   const component = shallow(<App />);
   expect(component.find('Footer').length).toBe(1);
-})
+});
+
+test('should contain Header component', () => {
+  const component = shallow(<App />);
+  expect(component.find('Header').length).toBe(1);
+});

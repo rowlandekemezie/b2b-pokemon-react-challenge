@@ -2,11 +2,8 @@
 
 exports[`renders without crashing 1`] = `
 <div>
-  <main
-    className="main"
-  >
-    The body
-  </main>
+  <Header />
+  <withRouter(Main) />
   <Footer />
 </div>
 `;
