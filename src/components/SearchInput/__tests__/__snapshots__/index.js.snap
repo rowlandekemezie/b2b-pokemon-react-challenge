@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component properly 1`] = `
+<input
+  className="input__search"
+  placeholder="Search for Pokémon here"
+  type="search"
+/>
+`;
