@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component properly 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`render subcomponents 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <withRouter(PokemonDetails)>
+    <Route
+      render={[Function]}
+    >
+      <PokemonDetails
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        location={
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          }
+        }
+        match={
+          Object {
+            "isExact": true,
+            "params": Object {},
+            "path": "/",
+            "url": "/",
+          }
+        }
+      >
+        <ReactPlaceholder
+          color="#CDCDCD"
+          delay={0}
+          ready={false}
+          rows={7}
+          showLoadingAnimation={true}
+          type="media"
+        >
+          <MediaBlock
+            className="show-loading-animation"
+            color="#CDCDCD"
+            delay={0}
+            rows={7}
+          >
+            <div
+              className="media-block show-loading-animation"
+              style={
+                Object {
+                  "display": "flex",
+                }
+              }
+            >
+              <RoundShape
+                color="#CDCDCD"
+                style={
+                  Object {
+                    "marginRight": 10,
+                    "minHeight": 55,
+                    "minWidth": 55,
+                    "width": 55,
+                  }
+                }
+              >
+                <div
+                  className="round-shape"
+                  style={
+                    Object {
+                      "backgroundColor": "#CDCDCD",
+                      "borderRadius": "500rem",
+                      "height": "100%",
+                      "marginRight": 10,
+                      "minHeight": 55,
+                      "minWidth": 55,
+                      "width": 55,
+                    }
+                  }
+                />
+              </RoundShape>
+              <TextBlock
+                color="#CDCDCD"
+                rows={7}
+                widths={
+                  Array [
+                    97,
+                    100,
+                    94,
+                    90,
+                    98,
+                    95,
+                    98,
+                    40,
+                  ]
+                }
+              >
+                <div
+                  className="text-block"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <TextRow
+                    key="0"
+                    lineSpacing={0}
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "97%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": 0,
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "97%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                  <TextRow
+                    key="1"
+                    lineSpacing="0.7em"
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": "0.7em",
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                  <TextRow
+                    key="2"
+                    lineSpacing="0.7em"
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "94%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": "0.7em",
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "94%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                  <TextRow
+                    key="3"
+                    lineSpacing="0.7em"
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "90%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": "0.7em",
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "90%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                  <TextRow
+                    key="4"
+                    lineSpacing="0.7em"
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "98%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": "0.7em",
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "98%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                  <TextRow
+                    key="5"
+                    lineSpacing="0.7em"
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "95%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": "0.7em",
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "95%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                  <TextRow
+                    key="6"
+                    lineSpacing="0.7em"
+                    style={
+                      Object {
+                        "backgroundColor": "#CDCDCD",
+                        "maxHeight": "7.6923076923076925%",
+                        "width": "98%",
+                      }
+                    }
+                  >
+                    <div
+                      className="text-row"
+                      style={
+                        Object {
+                          "backgroundColor": "#CDCDCD",
+                          "height": "1em",
+                          "marginTop": "0.7em",
+                          "maxHeight": "7.6923076923076925%",
+                          "width": "98%",
+                        }
+                      }
+                    />
+                  </TextRow>
+                </div>
+              </TextBlock>
+            </div>
+          </MediaBlock>
+        </ReactPlaceholder>
+      </PokemonDetails>
+    </Route>
+  </withRouter(PokemonDetails)>
+</Router>
+`;

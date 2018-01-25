@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PokemonItem from './PokemonItem';
 import Link from 'react-router-dom/Link';
-import { getPokemonId } from '../../helpers/utils';
+import { getPokemonId } from '../../../helpers/utils';
 
 const PokemonList = ({ pokemons, onSelect }) => {
   const renderPokemons = () => {
@@ -28,7 +28,8 @@ const PokemonList = ({ pokemons, onSelect }) => {
 PokemonList.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    onSelect: PropTypes.func
   }))
 };
 

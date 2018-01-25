@@ -1,55 +1,16 @@
 import React, { Component } from 'react';
-import Nprogress from 'nprogress';
-import ReactPlaceholder from 'react-placeholder';
 import DetailModal from 'react-modal';
-import 'nprogress/nprogress.css';
-import 'react-placeholder/lib/reactPlaceholder.css';
-import { apiRequest } from '../../api';
-import { PAGE_SIZE } from '../../constants';
-import PokemonList from './PokemonList';
-import PokemanDetail from './PokemonDetail';
-import SearchInput from '../../components/SearchInput';
-import Pagination from '../../components/Pagination';
 import withRouter from 'react-router-dom/withRouter';
+import Pokemons from './Pokemons';
+import PokemonDetails from './PokemonDetails';
+import customStyles from './styles';
 
 export class Main extends Component {
   state = {
-    pokemons: [],
-    error: '',
-    search: '',
-    isDetailModalOpen: false,
-    currentPage: 1
+    isDetailModalOpen: false
   }
 
-  async componentWillMount() {
-    DetailModal.setAppElement('body');
-
-    if (this.state.pokemons.length === 0) {
-      Nprogress.start();
-      try {
-        const { results } = await apiRequest('/?limit=50');
-        this.setState({pokemons: results});
-      } catch (e) {
-        this.setState({error: 'Something went wrong'});
-      }
-      Nprogress.done();
-    }
-  }
-
-  handleSearch = ({target: {value}}) => this.setState(({search}) => ({search: value}));
-
-  handleSelect = () => this.setState(({isDetailModalOpen}) => ({isDetailModalOpen: !isDetailModalOpen}));
-
-  onSelectPage = (currentPage) => this.setState({currentPage});
-
-  getDisplayedData() {
-    const { search, pokemons } = this.state;
-    const searchQuery = new RegExp(search, 'gi');
-
-    return search.length
-      ? pokemons.filter(pokemon => pokemon.name.search(searchQuery) >= 0)
-      : pokemons;
-  }
+  handleSelect = () => this.setState(prevState => ({isDetailModalOpen: !prevState.isDetailModalOpen}));
 
   goBack = () => {
     this.setState({isDetailModalOpen: false}, () => {
@@ -58,32 +19,20 @@ export class Main extends Component {
   }
 
   render() {
-    const { pokemons, search, isDetailModalOpen, currentPage } = this.state;
-    const displayPokemons = this.getDisplayedData();
-    const totalPage = Math.ceil(displayPokemons.length / PAGE_SIZE) || 0;
-    const pokemonsToRender = displayPokemons.slice(Math.max(0, (currentPage - 1) * PAGE_SIZE), currentPage * PAGE_SIZE);
+    const { isDetailModalOpen } = this.state;
 
     return (
       <main className="main">
-        <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
-          <SearchInput onChange={this.handleSearch} value={search} />
-          {pokemonsToRender && pokemonsToRender.length
-            ? <PokemonList pokemons={pokemonsToRender} onSelect={this.handleSelect} />
-            : <div className="main__not-found">No Pokemon found :)</div>
-          }
-        </ReactPlaceholder>
-        <Pagination
-          current={currentPage}
-          total={totalPage}
-          onNext={() => this.onSelectPage(Math.min(currentPage + 1, totalPage))}
-          onPrev={() => this.onSelectPage(Math.max(1, currentPage - 1))}
+        <Pokemons
+          handleSelect={this.handleSelect}
         />
         <DetailModal
           isOpen={isDetailModalOpen}
           onRequestClose={this.goBack}
           closeTimeoutMS={400}
+          style={customStyles}
         >
-          <PokemanDetail backToHome={this.goBack} />
+          <PokemonDetails backToHome={this.goBack} />
         </DetailModal>
       </main>
     );

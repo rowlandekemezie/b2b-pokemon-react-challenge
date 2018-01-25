@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders nothing 1`] = `""`;
+
+exports[`renders sprites component 1`] = `
+<div
+  className="sprites__wrapper"
+>
+  <h3
+    className="sprites__title"
+  >
+    Sprites
+  </h3>
+  <div
+    className="sprites__list"
+  >
+    <div
+      className="sprite__item"
+      key="0"
+    >
+      <div
+        className="sprite__background__cover"
+        style={
+          Object {
+            "backgroundImage": "url(https://fakeurl.com/image.png)",
+          }
+        }
+      />
+      <img
+        alt="sprint-0"
+        className="sprite__picture"
+        src="https://fakeurl.com/image.png"
+      />
+    </div>
+  </div>
+</div>
+`;
