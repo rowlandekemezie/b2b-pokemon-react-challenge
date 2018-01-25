@@ -22,4 +22,6 @@ test('handles returning back to homepage', () => {
   const component = mount(<BasicDetails {...props} />);
   component.find('img').first().simulate('click');
   expect(props.backToHome).toHaveBeenCalled();
+  expect(component.find('PokemonItem').length).toBe(1);
+  expect(component.find('img').length).toBe(1);
 });
