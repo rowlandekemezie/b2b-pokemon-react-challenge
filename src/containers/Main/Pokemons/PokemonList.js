@@ -28,7 +28,8 @@ const PokemonList = ({ pokemons, onSelect }) => {
 PokemonList.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    onSelect: PropTypes.func
   }))
 };
 

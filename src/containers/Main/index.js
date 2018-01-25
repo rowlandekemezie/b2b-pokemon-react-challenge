@@ -3,6 +3,7 @@ import DetailModal from 'react-modal';
 import withRouter from 'react-router-dom/withRouter';
 import Pokemons from './Pokemons';
 import PokemonDetails from './PokemonDetails';
+import customStyles from './styles';
 
 export class Main extends Component {
   state = {
@@ -16,6 +17,7 @@ export class Main extends Component {
       this.props.history.push('/');
     });
   }
+
   render() {
     const { isDetailModalOpen } = this.state;
 
@@ -28,6 +30,7 @@ export class Main extends Component {
           isOpen={isDetailModalOpen}
           onRequestClose={this.goBack}
           closeTimeoutMS={400}
+          style={customStyles}
         >
           <PokemonDetails backToHome={this.goBack} />
         </DetailModal>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DetailModal from 'react-modal';
 import withRouter from 'react-router-dom/withRouter';
 import Nprogress from 'nprogress';
@@ -49,7 +50,7 @@ export class Pokemons extends Component {
   }
 
   render() {
-    const { pokemons, search, currentPage } = this.state;
+    const { pokemons, search, currentPage, error } = this.state;
     const displayPokemons = this.getDisplayedData();
     const totalPage = Math.ceil(displayPokemons.length / PAGE_SIZE) || 0;
     const pokemonsToRender = displayPokemons.slice(Math.max(0, (currentPage - 1) * PAGE_SIZE), currentPage * PAGE_SIZE);
@@ -58,6 +59,7 @@ export class Pokemons extends Component {
       <div className="pokemon">
         <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={pokemons.length > 0}>
           <SearchInput onChange={this.handleSearch} value={search} />
+          {error && <p>{error}</p>}
           {pokemonsToRender && pokemonsToRender.length
             ? <PokemonList pokemons={pokemonsToRender} onSelect={this.props.handleSelect} />
             : <div className="main__not-found">No Pokemon found :)</div>
@@ -73,5 +75,9 @@ export class Pokemons extends Component {
     );
   }
 }
+
+Pokemons.propTypes = {
+  handleSelect: PropTypes.func.isRequired
+};
 
 export default withRouter(Pokemons);

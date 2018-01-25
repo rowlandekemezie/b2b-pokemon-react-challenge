@@ -1,27 +1,51 @@
 import React, { Component } from 'react';
+import ReactPlaceholder from 'react-placeholder';
+import isEmpty from 'lodash/isEmpty';
+import withRouter from 'react-router-dom/withRouter';
+import Sprites from './Sprites';
 import { apiRequest } from '../../../api';
+import BasicDetails from './BasicDetails';
 
-class PokemonDetails extends Component {
+export class PokemonDetails extends Component {
   state = {
-    details: null
+    details: null,
+    error: ''
   }
 
-  async componentWillMount() {
-    if (this.state.details == null) {
-      const { match } = this.props;
-    //   try {
-    //     const result = await apiRequest('/')
-    //   }
+  async fetchDetails() {
+    const { location } = this.props;
+    const pokemonId = parseInt(location.pathname.split('/').pop(), 10);
+    try {
+      const response = await apiRequest(`/${pokemonId}`);
+      this.setState({details: response});
+    } catch (e) {
+      this.setState({error: 'Something went wrong'});
     }
   }
+
+  componentWillMount() {
+    if (this.state.details == null) {
+      this.fetchDetails();
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.fetchDetails();
+    }
+  }
+
   render() {
+    const { details, error } = this.state;
+
     return (
-      <div>
-        <p onClick={this.props.backToHome}> Back </p>
-        Details
-      </div>
+      <ReactPlaceholder showLoadingAnimation type="media" rows={7} ready={!isEmpty(details)}>
+        {error && <p>{error}</p>}
+        {!isEmpty(details) && <BasicDetails details={details} backToHome={this.props.backToHome} />}
+        {!isEmpty(details) && <Sprites sprites={details.sprites} />}
+      </ReactPlaceholder>
     );
   }
 };
 
-export default PokemonDetails;
+export default withRouter(PokemonDetails);
