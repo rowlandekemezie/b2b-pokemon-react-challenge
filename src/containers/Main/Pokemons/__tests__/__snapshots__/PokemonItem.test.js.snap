@@ -8,7 +8,7 @@ exports[`render component 1`] = `
     className="pokemon__item__background__cover"
     style={
       Object {
-        "backgroundImage": "url(https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/NaN.png)",
+        "backgroundImage": "url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/NaN.png)",
       }
     }
   />
@@ -18,7 +18,7 @@ exports[`render component 1`] = `
     <img
       alt="pokemon-NaN"
       className="pokeman__item__picture"
-      src="https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/NaN.png"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/NaN.png"
     />
     <div
       className="pokemon__item__name"
