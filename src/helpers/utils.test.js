@@ -2,7 +2,7 @@ import { pokemonImageUrl, formatName, getPokemonId } from './utils';
 
 test('pokemonImageUrl returns proper url', () => {
   const id = 1;
-  const expectedValue = 'https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
+  const expectedValue = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
   expect(pokemonImageUrl(id)).toBe(expectedValue);
 });
 
