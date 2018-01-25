@@ -37,7 +37,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/static/styles --include-path ./node_modules src/static/styles -o src/static/styles --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "build": "rm -rf build/ && npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
     "test:coveralls": "cat ./coverage/lcov.info | coveralls",
