@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component properly 1`] = `
+<div
+  className="pagination"
+>
+  <div
+    className="pagination__current"
+  >
+    0
+  </div>
+  <span
+    className="pagination__text"
+  >
+     of 
+    5
+  </span>
+  <div
+    className="pagination__next"
+    onClick={[Function]}
+  >
+    Next
+  </div>
+</div>
+`;

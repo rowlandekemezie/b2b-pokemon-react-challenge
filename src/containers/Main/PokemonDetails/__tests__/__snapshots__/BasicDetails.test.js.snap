@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component 1`] = `
+<div
+  className="pokemon__details"
+>
+  <div>
+    <img
+      alt="back arrow"
+      onClick={[Function]}
+      src="back-arrow.svg"
+    />
+    <span
+      className="pokemon__name"
+    />
+  </div>
+  <div
+    className="pokemon__basic__details"
+  >
+    <PokemonItem
+      pokemon={
+        Object {
+          "name": "",
+          "url": "test/1",
+        }
+      }
+    />
+    <div
+      className="pokemon__details__items"
+    >
+      <div
+        className="basic__item"
+      >
+        <span>
+          Name:
+        </span>
+        <span />
+      </div>
+      <div
+        className="basic__item"
+      >
+        <span>
+          Weight:
+        </span>
+        <span />
+      </div>
+      <div
+        className="basic__item"
+      >
+        <span>
+          Type
+          :
+        </span>
+        <span />
+      </div>
+      <div
+        className="basic__item"
+      >
+        <span>
+          Ability
+          :
+        </span>
+        <span />
+      </div>
+      <div
+        className="basic__item"
+      >
+        <span>
+          Evolution Info:
+        </span>
+        <span />
+      </div>
+    </div>
+  </div>
+</div>
+`;

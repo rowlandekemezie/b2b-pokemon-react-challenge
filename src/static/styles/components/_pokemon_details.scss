@@ -1,0 +1,64 @@
+.pokemon__details {
+  color: $white;
+  margin-top: 2rem;
+  animation: fadein 2s;
+}
+
+.pokemon__basic__details {
+  color: $white;  
+}
+
+.pokemon__basic__details {
+  display: flex;
+  margin-top: 2rem;
+
+  .pokemon__item {
+    z-index: 5;
+  }
+}
+.pokemon__name {
+  font-size: 3rem;
+  margin-left: 3rem;
+  text-transform: capitalize;
+}
+
+.pokemon__details__items {
+  flex-direction: column;
+  margin: .8rem 0;
+  text-transform: capitalize;
+
+  .basic__item {
+    display: flex;
+    font-size: $sm-size;
+    margin-bottom: 1rem;
+
+    span:last-child {
+      width: 42%;
+    }
+
+    span:first-child {
+      width: 40%;
+      font-weight: 300;
+      opacity: .5;
+    }
+  }
+}
+
+@media only screen and (min-width: $phone-plus-screen) {
+  .pokemon__details__items {
+    .basic__item {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+
+@media only screen and (min-width: $phone-large-screen){
+  .pokemon__details__items{
+    width: 28rem;
+  }
+  
+  .pokemon__details {
+    margin-left: 4rem;
+  }
+}

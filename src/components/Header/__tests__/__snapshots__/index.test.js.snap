@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component 1`] = `
+<header
+  className="header"
+>
+  <p
+    className="header__text__first"
+  >
+    Pokémon
+  </p>
+  <img
+    alt="logo"
+    className="header__image"
+    src="header-image.svg"
+  />
+  <p
+    className="header__text__second"
+  >
+    Rendezvous
+  </p>
+</header>
+`;

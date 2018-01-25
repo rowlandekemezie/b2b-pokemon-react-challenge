@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PokemonItem from './PokemonItem';
 import Link from 'react-router-dom/Link';
-import { getPokemanId } from '../../helpers/utils';
+import { getPokemonId } from '../../../helpers/utils';
 
 const PokemonList = ({ pokemons, onSelect }) => {
   const renderPokemons = () => {
     return pokemons.map((pokemon, index) => (
       <Link
-        to={`/${pokemon.name}/${getPokemanId(pokemon.url)}`}
+        to={`/${pokemon.name}/${getPokemonId(pokemon.url)}`}
         key={index}
         className="pokeman__list__item pokemon__no__link"
         onClick={onSelect}
@@ -28,7 +28,8 @@ const PokemonList = ({ pokemons, onSelect }) => {
 PokemonList.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    onSelect: PropTypes.func
   }))
 };
 
