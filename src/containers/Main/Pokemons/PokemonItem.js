@@ -11,7 +11,7 @@ const PokemonItem = ({ pokemon }) => {
     <div className="pokemon__item">
       <div className="pokemon__item__background__cover" style={backgroundStyle} />
       <div className="pokemon__item__content">
-        <img className="pokeman__item__picture" src={pokemonImageUrl(id)} alt={`pokemon-${id}`}/>
+        <img className="pokeman__item__picture" src={pokemonImageUrl(id)} alt={`pokemon-${id}`} />
         <div className="pokemon__item__name">{formatName(pokemon.name)}</div>
       </div>
     </div>
