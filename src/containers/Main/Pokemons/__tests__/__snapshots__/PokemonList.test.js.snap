@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component 1`] = `
+<div
+  className="pokemon__list"
+>
+  <Link
+    className="pokeman__list__item pokemon__no__link"
+    key="0"
+    replace={false}
+    to="/test/NaN"
+  >
+    <PokemonItem
+      pokemon={
+        Object {
+          "name": "test",
+          "url": "test/2",
+        }
+      }
+    />
+  </Link>
+</div>
+`;

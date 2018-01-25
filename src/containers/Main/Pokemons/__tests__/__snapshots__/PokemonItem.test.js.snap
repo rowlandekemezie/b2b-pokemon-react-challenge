@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render component 1`] = `
+<div
+  className="pokemon__item"
+>
+  <div
+    className="pokemon__item__background__cover"
+    style={
+      Object {
+        "backgroundImage": "url(https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/NaN.png)",
+      }
+    }
+  />
+  <div
+    className="pokemon__item__content"
+  >
+    <div
+      className="pokeman__item__picture"
+      style={
+        Object {
+          "backgroundImage": "url(https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/NaN.png)",
+        }
+      }
+    />
+    <div
+      className="pokemon__item__name"
+    >
+      Test
+    </div>
+  </div>
+</div>
+`;
