@@ -11,10 +11,10 @@ test('renders component', () => {
 
 test('renders subcomponents', () => {
   const component = shallow(<Main />);
-  
+
   expect(component.find('Pokemons').length).toBeDefined();
-  expect(component.find('PokemonDetails').length).toBeDefined(); 
-  expect(component.find('DetailModal').length).toBeDefined();     
+  expect(component.find('PokemonDetails').length).toBeDefined();
+  expect(component.find('DetailModal').length).toBeDefined();
 });
 
 test('renders with history props', () => {
@@ -22,8 +22,5 @@ test('renders with history props', () => {
   const component = <Router history={history}><Main /></Router>;
 
   expect(component).toMatchSnapshot();
-  expect(component.props.history).toBeDefined()
+  expect(component.props.history).toBeDefined();
 });
-
-
-

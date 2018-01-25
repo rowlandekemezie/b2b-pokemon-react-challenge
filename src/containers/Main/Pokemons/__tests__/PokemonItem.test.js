@@ -5,7 +5,7 @@ test('render component', () => {
   const props = {
     pokemon: {
       name: 'test',
-      url:'test/2'
+      url: 'test/2'
     }
   };
 
