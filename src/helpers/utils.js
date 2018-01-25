@@ -1,4 +1,4 @@
-export const pokemonImageUrl = id => `https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+export const pokemonImageUrl = id => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
 export const getPokemonId = url => {
   const splittedUrl = url.split('/');
