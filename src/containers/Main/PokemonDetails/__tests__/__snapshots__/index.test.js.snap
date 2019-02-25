@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render component properly 1`] = `
-<Route
-  render={[Function]}
-/>
+<Route>
+  <Component />
+</Route>
 `;
 
 exports[`render subcomponents 1`] = `
@@ -30,9 +30,7 @@ exports[`render subcomponents 1`] = `
   }
 >
   <withRouter(PokemonDetails)>
-    <Route
-      render={[Function]}
-    >
+    <Route>
       <PokemonDetails
         history={
           Object {
