@@ -1,5 +1,5 @@
 # A simple pokémon Rendezvous built with React
-[![Build Status](https://travis-ci.org/mentrie/b2b-pokemon-react-challenge.svg)](https://travis-ci.org/mentrie/b2b-pokemon-react-challenge)
+[![Build Status](https://travis-ci.org/rowlandekemezie/b2b-pokemon-react-challenge.svg)](https://travis-ci.org/rowlandekemezie/b2b-pokemon-react-challenge)
 
 ![](https://user-images.githubusercontent.com/15085641/35378046-a9ad864e-01b1-11e8-82e3-51bd84a8c9e4.png)
 
