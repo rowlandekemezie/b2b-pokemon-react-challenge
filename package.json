@@ -43,12 +43,14 @@
     "test:coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "./node_modules/.bin/eslint src",
     "lint-fix": "./node_modules/.bin/eslint src --fix",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
   },
-  "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+  "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+  "heroku-run-build-script": true
 }
